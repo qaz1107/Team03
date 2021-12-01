@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LHUClass;
 use Illuminate\Http\Request;
 
 class ClassesController extends Controller
@@ -14,6 +15,7 @@ class ClassesController extends Controller
     public function index()
     {
         //
+        return LHUClass::all()->toArray();
     }
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\StudentsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return "Hello World";
 });
-Route::resource('Students','StudentsController');
-Route::resource('classes','classesController');
+Route::resource('Students',StudentsController::class);
+Route::resource('classes',ClassesController::class);
