@@ -16,7 +16,7 @@ class ClassesController extends Controller
     {
         //
         return LHUClass::all()->toArray();
-        return "查詢所有學生資料";
+        return "查詢所有班級資料";
         $Classes=Classes::all();
         return view('Classes.index')->with(['Classes'=>$Classes]);
     }
@@ -29,7 +29,7 @@ class ClassesController extends Controller
     public function create()
     {
         //
-        return "新增學生資料表單";
+        return "新增班級資料表單";
     }
 
     /**
@@ -41,7 +41,7 @@ class ClassesController extends Controller
     public function store(Request $request)
     {
         //
-        return "新增學生資料";
+        return "新增班級資料";
     }
 
     /**
@@ -53,7 +53,7 @@ class ClassesController extends Controller
     public function show($id)
     {
         //
-        return "顯示單筆學生資料";
+        return "顯示單筆班級資料";
     }
 
     /**
@@ -65,7 +65,7 @@ class ClassesController extends Controller
     public function edit($id)
     {
         //
-        return "修改學生資料表單";
+        return "修改班級資料表單";
     }
 
     /**
@@ -78,7 +78,7 @@ class ClassesController extends Controller
     public function update(Request $request, $id)
     {
         //
-        return "修改學生資料";
+        return "修改班級資料";
     }
 
     /**
@@ -90,6 +90,6 @@ class ClassesController extends Controller
     public function destroy($id)
     {
         //
-        return "刪除學生資料";
+        return "刪除班級資料";
     }
 }

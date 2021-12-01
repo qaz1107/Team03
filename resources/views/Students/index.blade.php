@@ -14,14 +14,14 @@
         <th></th>
         <th></th>
     </tr>
-    @foreach($Classes as $Class)
+    @foreach($Students as $Student)
         <tr>
-            <td>{{$Classes->id}}</td>
-            <td>{{$Classes->department}}</td>
-            <td>{{$Classes->classname}}</td>
-            <td>{{$Classes->grade}}</td>
-            <td>{{$Classes->classroom}}</td>
-            <td>{{$Classes->teacher}}</td>
+            <td>{{$Students->}}</td>
+            <td>{{$Students->}}</td>
+            <td>{{$Students->}}</td>
+            <td>{{$Students->}}</td>
+            <td>{{$Students->}}</td>
+            <td>{{$Students->}}</td>
         </tr>
     @endforeach
 </table>

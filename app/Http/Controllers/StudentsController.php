@@ -14,6 +14,9 @@ class StudentsController extends Controller
     public function index()
     {
         //
+        return "查詢所有學生資料";
+        $Students=Students::all();
+        return view('Students.index')->with(['Students'=>$Students]);
     }
 
     /**
@@ -24,6 +27,7 @@ class StudentsController extends Controller
     public function create()
     {
         //
+        return "";
     }
 
     /**
@@ -35,6 +39,7 @@ class StudentsController extends Controller
     public function store(Request $request)
     {
         //
+        return "";
     }
 
     /**
@@ -46,6 +51,7 @@ class StudentsController extends Controller
     public function show($id)
     {
         //
+        return "";
     }
 
     /**
@@ -57,6 +63,7 @@ class StudentsController extends Controller
     public function edit($id)
     {
         //
+        return "";
     }
 
     /**
@@ -69,6 +76,7 @@ class StudentsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return "";
     }
 
     /**
@@ -80,5 +88,6 @@ class StudentsController extends Controller
     public function destroy($id)
     {
         //
+        return "";
     }
 }
