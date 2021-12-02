@@ -27,7 +27,7 @@ class StudentsController extends Controller
     public function create()
     {
         //
-        return "";
+        return "新增學生資料表單";
     }
 
     /**
@@ -39,7 +39,7 @@ class StudentsController extends Controller
     public function store(Request $request)
     {
         //
-        return "";
+        return "新增學生資料";
     }
 
     /**
@@ -51,7 +51,7 @@ class StudentsController extends Controller
     public function show($id)
     {
         //
-        return "";
+        return "顯示單筆學生資料";
     }
 
     /**
@@ -63,7 +63,7 @@ class StudentsController extends Controller
     public function edit($id)
     {
         //
-        return "";
+        return "修改學生資料表單";
     }
 
     /**
@@ -76,7 +76,7 @@ class StudentsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        return "";
+        return "修改學生資料";
     }
 
     /**
@@ -88,6 +88,6 @@ class StudentsController extends Controller
     public function destroy($id)
     {
         //
-        return "";
+        return "刪除學生資料";
     }
 }
