@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LHUClass;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentsController extends Controller
@@ -14,6 +16,7 @@ class StudentsController extends Controller
     public function index()
     {
         //
+        return Student::all()->toArray();
         return "查詢所有學生資料";
         $Students=Students::all();
         return view('Students.index')->with(['Students'=>$Students]);
