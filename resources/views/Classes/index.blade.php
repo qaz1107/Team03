@@ -13,6 +13,8 @@
         <th>年級</th>
         <th>教室</th>
         <th>班導</th>
+        <th>操作1</th>
+        <th>操作2</th>
     </tr>
     @foreach($Classes as $Class)
     <tr>
@@ -22,7 +24,8 @@
         <td>{{$Class->grade}}</td>
         <td>{{$Class->classroom}}</td>
         <td>{{$Class->teacher}}</td>
-        <td><a href="students/{{$Class->id}}">個班</a></td>
+        <td><a href="classes/{{$Class->id}}">個班</a></td>
+        <td><a href="classes/{{$Class->id}}/edit">修改</a></td>
     </tr>
     @endforeach
 </table>

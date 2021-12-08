@@ -53,8 +53,8 @@ class StudentsController extends Controller
      */
     public function show($id)
     {
-        //
-        return "顯示單筆學生資料";
+        $Student=Student::findOrFail($id);
+        return view('Students.show')->with(['Student'=>$Student]);
     }
 
     /**
@@ -65,8 +65,9 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        //
-        return "修改學生資料表單";
+        //return "修改學生資料表單";
+        $Student=Student::findOrFail($id);
+        return view('Students.edit')->with(['Student'=>$Student]);
     }
 
     /**

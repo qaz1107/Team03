@@ -52,8 +52,9 @@ class ClassesController extends Controller
      */
     public function show($id)
     {
-        //
-        return "顯示單筆班級資料";
+        //return "顯示單筆班級資料";
+        $Class=LHUClass::findOrFail($id);
+        return view('Classes.show')->with(['Class'=>$Class]);
     }
 
     /**
@@ -64,8 +65,9 @@ class ClassesController extends Controller
      */
     public function edit($id)
     {
-        //
-        return "修改班級資料表單";
+        //return "修改班級資料表單";
+        $Class=LHUClass::findOrFail($id);
+        return view('Classes.edit')->with(['Class'=>$Class]);
     }
 
     /**

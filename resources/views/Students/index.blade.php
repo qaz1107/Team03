@@ -17,6 +17,8 @@
         <th>入學年份</th>
         <th>座位</th>
         <th>出生地</th>
+        <th>操作1</th>
+        <th>操作2</th>
     </tr>
     @foreach($Students as $Student)
         <tr>
@@ -30,7 +32,8 @@
             <td>{{$Student->start_year}}</td>
             <td>{{$Student->seat}}</td>
             <td>{{$Student->country}}</td>
-            <td><a href="students/{{$Student->id}}">個人</a></td>
+            <td><a href="students/{{$Student->id}}">詳細</a></td>
+            <td><a href="students/{{$Student->id}}/edit">修改</a></td>
         </tr>
     @endforeach
 </table>
