@@ -16,9 +16,9 @@ class StudentsController extends Controller
     public function index()
     {
         //
-        return Student::all()->toArray();
-        return "查詢所有學生資料";
-        $Students=Students::all();
+        //return Student::all()->toArray();
+        //return "查詢所有學生資料";
+        $Students=Student::all();
         return view('Students.index')->with(['Students'=>$Students]);
     }
 

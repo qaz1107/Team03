@@ -16,12 +16,13 @@
     </tr>
     @foreach($Classes as $Class)
     <tr>
-        <td>{{$Classes->id}}</td>
-        <td>{{$Classes->department}}</td>
-        <td>{{$Classes->classname}}</td>
-        <td>{{$Classes->grade}}</td>
-        <td>{{$Classes->classroom}}</td>
-        <td>{{$Classes->teacher}}</td>
+        <td>{{$Class->id}}</td>
+        <td>{{$Class->department}}</td>
+        <td>{{$Class->classname}}</td>
+        <td>{{$Class->grade}}</td>
+        <td>{{$Class->classroom}}</td>
+        <td>{{$Class->teacher}}</td>
+        <td><a href="students/{{$Class->id}}">個班</a></td>
     </tr>
     @endforeach
 </table>
