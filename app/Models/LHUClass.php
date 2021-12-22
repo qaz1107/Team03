@@ -8,5 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class LHUClass extends Model
 {
     use HasFactory;
-    protected $table = "classes";
+    protected $table="classes";
+    protected $fillable=[
+        'department',
+        'classname',
+        'grade',
+        'classroom',
+        'teacher',
+    ];
 }

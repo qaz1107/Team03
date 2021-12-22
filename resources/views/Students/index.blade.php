@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>顯示所有學生資料</h1>
+<form><a href="students/create">新增單一學生資料</a></form>
 <table border="1">
     <tr>
         <th>編號</th>
@@ -19,6 +20,7 @@
         <th>出生地</th>
         <th>操作1</th>
         <th>操作2</th>
+        <th>操作3</th>
     </tr>
     @foreach($Students as $Student)
         <tr>
@@ -34,6 +36,13 @@
             <td>{{$Student->country}}</td>
             <td><a href="students/{{$Student->id}}">詳細</a></td>
             <td><a href="students/{{$Student->id}}/edit">修改</a></td>
+            <td>
+                <form method="post" action="students/{{$Student->id}}">
+                    @csrf
+                    @method("delete")
+                    <input type="submit" value="刪除"/>
+                </form>
+            </td>
         </tr>
     @endforeach
 </table>

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>修改單一學生資料</h1>
-<form method="post" action="students/{$student->id}/edit">
+<form method="post" action="/students/{{$Student->id}}">
     @csrf
     @method("put")
 <table border="1">

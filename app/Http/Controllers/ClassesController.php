@@ -28,8 +28,8 @@ class ClassesController extends Controller
      */
     public function create()
     {
-        //
-        return "新增班級資料表單";
+        //return "新增班級資料表單";
+        return view('Classes.create');
     }
 
     /**
@@ -40,8 +40,21 @@ class ClassesController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return "新增班級資料";
+        //return "新增班級資料";
+        $department = $request->input('department');
+        $classname = $request->input('classname');
+        $grade = $request->input('grade');
+        $classroom = $request->input('classroom');
+        $teacher = $request->input('teacher');
+
+        LHUClass::create([
+        'department' => $department,
+        'classname' => $classname,
+        'grade' => $grade,
+        'classroom' => $classroom,
+        'teacher' => $teacher
+        ]);
+        return redirect('classes');
     }
 
     /**
@@ -79,8 +92,16 @@ class ClassesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        return "修改班級資料";
+        //return "修改班級資料";
+        $class = LHUClass::findOrFail($id);
+
+        $class->department = $request->input('department');
+        $class->classname = $request->input('classname');
+        $class->grade = $request->input('grade');
+        $class->classroom = $request->input('classroom');
+        $class->teacher = $request->input('teacher');
+        $class->save();
+        return redirect('classes');
     }
 
     /**
@@ -91,7 +112,9 @@ class ClassesController extends Controller
      */
     public function destroy($id)
     {
-        //
-        return "刪除班級資料";
+        //return "刪除班級資料";
+        $class = LHUClass::findOrFail($id);
+        $class ->delete();
+        return redirect('classes');
     }
 }

@@ -25,6 +25,7 @@ class CreateStudentsTable extends Migration
             $table->string('seat',20)->comment('座位');
             $table->string('country',100)->comment('出生地');
             $table->timestamps();
+            $table->foreign('cid')->references('id')->on('classes')->onDelete('cascade');
         });
     }
 

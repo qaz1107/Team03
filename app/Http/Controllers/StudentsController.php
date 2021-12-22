@@ -29,8 +29,8 @@ class StudentsController extends Controller
      */
     public function create()
     {
-        //
-        return "新增學生資料表單";
+        //return "新增學生資料表單";
+        return view('Students.create');
     }
 
     /**
@@ -41,8 +41,29 @@ class StudentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return "新增學生資料";
+        //return "新增學生資料";
+        $student_id = $request->input('student_id');
+        $seat_number = $request->input('seat_number');
+        $name = $request->input('name');
+        $gender = $request->input('gender');
+        $cid = $request->input('cid');
+        $graduation_year = $request->input('graduation_year');
+        $start_year = $request->input('start_year');
+        $seat = $request->input('seat');
+        $country = $request->input('country');
+
+        Student::create([
+            'student_id' => $student_id ,
+            'seat_number' => $seat_number ,
+            'name' => $name ,
+            'gender' => $gender ,
+            'cid' => $cid ,
+            'graduation_year' => $graduation_year ,
+            'start_year' => $start_year ,
+            'seat' => $seat ,
+            'country' => $country ,
+        ]);
+        return redirect('students');
     }
 
     /**
@@ -79,8 +100,20 @@ class StudentsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        return "修改學生資料";
+        //return "修改學生資料";
+        $Student = Student::findOrFail($id);
+
+        $Student->student_id = $request->input('student_id');
+        $Student->seat_number = $request->input('seat_number');
+        $Student->name = $request->input('name');
+        $Student->gender = $request->input('gender');
+        $Student->cid = $request->input('cid');
+        $Student->graduation_year = $request->input('graduation_year');
+        $Student->start_year = $request->input('start_year');
+        $Student->seat = $request->input('seat');
+        $Student->country = $request->input('country');
+        $Student->save();
+        return redirect('students');
     }
 
     /**
@@ -91,7 +124,9 @@ class StudentsController extends Controller
      */
     public function destroy($id)
     {
-        //
-        return "刪除學生資料";
+        //return "刪除學生資料";
+        $Student = Student::findOrFail($id);
+        $Student -> delete();
+        return redirect('students');
     }
 }

@@ -5,9 +5,9 @@
 </head>
 <body>
 <h1>修改單一班級資料</h1>
-<form method="post" action="students/{{ $Class->id }}/edit">
+<form method="post" action="/classes/{{ $Class->id }}">
     @csrf
-    @method("put")
+    @method("PUT")
 <table border="1">
     <tr>
         <td>編號</td>
