@@ -5,7 +5,8 @@
 </head>
 <body>
 <h1>顯示所有學生資料</h1>
-<form><a href="students/create">新增單一學生資料</a></form>
+<a href="{{route('classes.index') }}">顯示所有班級資料</a>
+<a href="{{route('students.create') }}">新增單一學生資料</a>
 <table border="1">
     <tr>
         <th>編號</th>

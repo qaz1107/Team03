@@ -17,7 +17,7 @@ class ClassesController extends Controller
         //
         //return LHUClass::all()->toArray();
         //return "查詢所有班級資料";
-        $Classes=LHUClass::all();
+        $Classes=LHUClass::all()->sortBy('classroom');
         return view('Classes.index')->with(['Classes'=>$Classes]);
     }
 

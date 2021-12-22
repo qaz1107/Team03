@@ -18,7 +18,7 @@ class StudentsController extends Controller
         //
         //return Student::all()->toArray();
         //return "查詢所有學生資料";
-        $Students=Student::all();
+        $Students=Student::all()->sortBy('student_id');
         return view('Students.index')->with(['Students'=>$Students]);
     }
 

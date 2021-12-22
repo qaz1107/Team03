@@ -12,6 +12,7 @@ class  ClassesTableSeeder extends Seeder
      *
      * @return void
      */
+
     public function RandomDepartment()
     {
         $positions = ['文', '理'];

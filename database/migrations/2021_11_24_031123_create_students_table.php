@@ -19,7 +19,7 @@ class CreateStudentsTable extends Migration
             $table->tinyInteger('seat_number')->unsigned()->comment('座號');
             $table->string('name',100)->comment('姓名');
             $table->string('gender',10)->comment('性別');
-            $table->tinyInteger('cid')->unsigned()->comment('班級');
+            $table->foreignId('cid')->comment('班級');//foreignId
             $table->date('graduation_year')->comment('畢業年份');
             $table->date('start_year')->comment('入學年份');
             $table->string('seat',20)->comment('座位');
