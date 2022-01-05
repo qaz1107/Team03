@@ -30,7 +30,8 @@ class StudentsController extends Controller
     public function create()
     {
         //return "新增學生資料表單";
-        return view('Students.create');
+        $Students=Student::all()->sortBy('id');
+        return view('Students.create')->with(['Students'=>$Students]);
     }
 
     /**
@@ -88,7 +89,8 @@ class StudentsController extends Controller
     {
         //return "修改學生資料表單";
         $Student=Student::findOrFail($id);
-        return view('Students.edit')->with(['Student'=>$Student]);
+        $country=Student::allcountries()->get();
+        return view('Students.edit')->with(['Student'=>$Student,'country'=>$country]);
     }
 
     /**
@@ -128,5 +130,57 @@ class StudentsController extends Controller
         $Student = Student::findOrFail($id);
         $Student -> delete();
         return redirect('students');
+    }
+    public function api_Students()
+    {
+        return Student::all();
+    }
+    public function api_updpte(Request $request)
+    {
+        $Students = Student::find($request->input('id'));
+        if ($Students == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+        $Students->student_id = $request->input('student_id');
+        $Students->seat_number = $request->input('seat_number');
+        $Students->name = $request->input('name');
+        $Students->gender = $request->input('gender');
+        $Students->cid = $request->input('cid');
+        $Students->graduation_year = $request->input('graduation_year');
+        $Students->start_year = $request->input('start_year');
+        $Students->seat = $request->input('seat');
+        $Students->country = $request->input('country');
+
+        if ($Students->save())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+    }
+    public function api_delete(Request $request)
+    {
+        $Students = Student::find($request->input('id'));
+
+        if ($Students == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        if ($Students->delete())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        }
     }
 }

@@ -22,4 +22,10 @@ class Student extends Model
     public function LHUClass(){
         return $this->belongsTo('App\Models\LHUClass','cid','id');
     }
+    public function scopeSenior($query){
+        $query->where('student_id','>',10)->orderBy('student_id');
+    }
+    public function scopeAllCountries($query){
+        $query->select('country')->groupBy('country');
+    }
 }

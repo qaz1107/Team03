@@ -34,7 +34,10 @@ class StudentsTableSeeder extends Seeder
         return $seat;
     }
     public function RandomCountry(){
-        $positions = ['臺北','高雄','澎湖','臺南','臺中','花蓮'];
+        $positions = ['基隆市','台北市','新北市','桃園市','新竹市','新竹縣'
+                      ,'苗栗市','苗栗縣','台中市','彰化市','彰化縣','雲林縣','南投市','南投縣'
+                      ,'嘉義市','嘉義縣','台南市','高雄市','屏東市','屏東縣','宜蘭市','花蓮市'
+                      ,'花蓮縣','台東市','台東縣','澎湖縣','金門縣','連江縣','綠島','蘭嶼','馬祖'];
         return $positions[rand(0,count($positions)-1)];
     }
     public function run()

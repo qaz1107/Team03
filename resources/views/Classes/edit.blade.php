@@ -15,7 +15,20 @@
     </tr>
     <tr>
         <td>系別</td>
-        <td><input type="text" name="department" value="{{$Class->department}}"/></td>
+        <td>
+            @if($Class->department=='文')
+            <input type="radio" name="department" value="文" checked/>
+            @else
+            <input type="radio" name="department" value="文"/>
+            @endif
+            <label for="department">文</label>
+            @if($Class->department=='理')
+            <input type="radio" name="department" value="理" checked/>
+            @else
+            <input type="radio" name="department" value="理"/>
+            @endif
+            <label for="department">理</label>
+        </td>
     </tr>
     <tr>
         <td>班級名稱</td>

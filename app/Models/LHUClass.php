@@ -19,4 +19,7 @@ class LHUClass extends Model
     public function Student(){
         return $this->hasMany('App\Models\Student','cid');
     }
+    /**public function scopeclass($query,$lhuclass){
+        $query->where('lhuclass','=',$lhuclass);
+    }**/
 }

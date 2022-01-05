@@ -117,4 +117,64 @@ class ClassesController extends Controller
         $class ->delete();
         return redirect('classes');
     }
+    /**public function classA(){
+        $class = LHUClass::scopeclass('A班')->get();
+        return view('Classes.index', ['class'=>$class]);
+    }
+    public function classB(){
+        $class = LHUClass::scopeclass('B班')->get();
+        return view('teams.index', ['class'=>$class]);
+    }**/
+    public function api_teams()
+    {
+        return LHUClass::all();
+    }
+
+    public function api_update(Request $request)
+    {
+        $class = LHUClass::find($request->input('id'));
+        if ($class == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        $class->department = $request->input('department');
+        $class->classname = $request->input('classname');
+        $class->grade = $request->input('grade');
+        $class->classroom = $request->input('classroom');
+        $class->teacher = $request->input('teacher');
+
+        if ($class->save())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+    }
+
+    public function api_delete(Request $request)
+    {
+        $class = LHUClass::find($request->input('id'));
+
+        if ($class == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        if ($class->delete())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        }
+
+    }
 }
